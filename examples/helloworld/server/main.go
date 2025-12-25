@@ -53,7 +53,9 @@ func main() {
 		// you can set UseJSONNamesForFields to false
 		// default is true
 		generator.UseJSONNamesForFields(true),
-	))
+	),
+		openapiv2.WithServices("helloworld.Greeter"),
+	)
 	httpSrv.HandlePrefix("/q/", h)
 
 	/*	fs := httpx.FileServer(httpx.Dir("./dist"))
